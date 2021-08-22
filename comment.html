@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5 p-5">
+        <h2 class="text-center text-danger fw-bold">Add your <span class="text-warning">Comment</span></h2>
+        <section id="comment-section">
+            <h3>Your Comment</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, ex soluta quas, voluptatibus corporis
+                placeat pariatur delectus, a illum ad nesciunt architecto voluptatem possimus. Quam, quae facilis nobis
+                vero aperiam debitis, delectus est, voluptatum tenetur error quasi nam labore. Ipsa.</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid inventore iure quasi ducimus animi
+                possimus praesentium corrupti accusamus voluptatem. Corrupti quasi sint a. Animi eius illum repellendus
+                veritatis maiores enim ipsa aperiam et non earum. Laboriosam soluta cumque vitae illum!</p>
+        </section>
+        <section>
+            <div><textarea name="" id="addComment" cols="70" rows="4"></textarea></div>
+            <button id="add-btn" class="btn btn-primary mt-2">Add Comment</button>
+        </section>
+    </div>
+    <script>
+        let clickButton = document.getElementById('add-btn').addEventListener('click', function () {
+            let textAreaVelue = document.getElementById('addComment');
+            let value = textAreaVelue.value;
+            let section = document.getElementById('comment-section');
+            //create p
+            let p = document.createElement('p');
+            p.innerText = value;
+            section.appendChild(p);
+            textAreaVelue.value = '';
+        })
+    </script>
+</body>
+
+</html>

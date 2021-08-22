@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div id="con" class="container p-2">
+        <h2 class="text-center">Explore <span class="text-danger">bubble</span></h2>
+        <section id="section-container">
+            <h4 class="mb-3 ms-2 text-primary">Dalegate list</h4>
+            <ul id="mainUl" class="list-group">
+                <li class="item list-group-item">list item - 1</li>
+                <li id="second" class="item list-group-item">list item - 2</li>
+                <li class="item list-group-item">list item - 3</li>
+                <li class="item list-group-item">list item - 4</li>
+                <li class="item list-group-item">list item - 5</li>
+            </ul>
+        </section>
+    </div>
+    <script>
+        document.getElementById('mainUl').addEventListener('click', function (e) {
+            e.target.parentNode.removeChild(e.target);
+
+        })
+
+    </script>
+</body>
+
+</html>

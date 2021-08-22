@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5 p-5">
+        <p id="text"></p>
+        <input id="input-field" type="text" placeholder="enter your text"><br><br>
+        <button id="update" class="btn btn-warning">Update text</button><br><br>
+        <button id="direct" class="btn btn-danger">make sortcut</button>
+        <button onclick="justFun()" class="btn btn-success">just function</button>
+    </div>
+    <script>
+        //input field + button click update paragraph text
+        let updateButton = document.getElementById('update');
+        updateButton.addEventListener('click', function () {
+            let input = document.getElementById('input-field');
+            let ptext = document.getElementById('text');
+            ptext.innerText = input.value;
+            input.value = '';
+        });
+        //let justFun = document.getElementById('just')
+        function justFun() {
+            let ptext = document.getElementById('text');
+            ptext.innerText = 'hi you click just function button';
+        }
+        //direct
+        document.getElementById('direct').addEventListener('click', function () {
+            let ptext = document.getElementById('text');
+            ptext.innerText = 'hi you click direct function button';
+        })
+    </script>
+</body>
+
+</html>

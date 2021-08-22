@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/css/bootstrap.min.css">
+</head>
+
+<body>
+    <section id="blog-section" class="container">
+        <h1 class="text-center">Explore dom</h1>
+
+        <article id="first-article">
+            <h2 class="section-title">Dom section - 1</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem molestias ipsam ab molestiae a ipsum
+                illum in illo magnam blanditiis! Fuga facilis nisi aliquid totam quisquam exercitationem quia quos,
+                ratione sequi ducimus doloremque, enim vel aut corrupti voluptatum iste laudantium aspernatur ad
+                officiis labore earum, laborum suscipit nihil consequuntur. Magni.</p>
+        </article>
+        <article>
+            <h2 class="section-title">Dom section - 2</h2>
+            <p>Deserunt dolore modi eos suscipit corporis architecto a quibusdam ipsam iste ullam exercitationem
+                repellendus temporibus, molestiae repellat atque possimus est alias odit ratione quos consectetur!
+                Maiores eum debitis blanditiis commodi libero perferendis itaque, porro dolores inventore maxime! Et
+                animi incidunt vitae nisi itaque nulla officiis necessitatibus, neque architecto omnis voluptas.</p>
+        </article>
+        <article>
+            <h2 class="section-title">Dom section - 3</h2>
+            <p>Omnis quibusdam exercitationem tenetur facere deleniti laboriosam. Beatae aliquid voluptatibus expedita
+                illum ipsum excepturi hic. Ipsam qui ratione reiciendis vero optio itaque natus quo eligendi et est
+                adipisci illo saepe, voluptatum animi, dolore iste corrupti quod harum voluptate. Atque architecto
+                libero tempore perferendis assumenda asperiores distinctio ipsam alias. Vero, recusandae?</p>
+        </article>
+        <article>
+            <h2 class="section-title">Dom section - 4</h2>
+            <p>Nihil est quaerat, provident deserunt enim asperiores! Voluptas dolorem recusandae, similique non autem
+                unde illum, at consequuntur magni laborum deserunt delectus accusantium tempore! Dignissimos est,
+                temporibus eaque incidunt adipisci, nisi aut quisquam voluptates non accusantium necessitatibus
+                cupiditate ex sapiente laborum dolor nemo iusto! Voluptatibus laudantium suscipit corporis illum aut
+                qui?</p>
+        </article>
+
+        <ul id="main-list" class="list-group">
+            <li class="list-item list-group-item">list item - 1</li>
+            <li class="list-item list-group-item">list item - 2</li>
+            <li class="list-item list-group-item">list item - 3</li>
+            <li class="list-item list-group-item">list item - 4</li>
+            <li class="list-item list-group-item">list item - 5</li>
+        </ul>
+    </section>
+
+    <script src="js/dom.js"></script>
+    <script>
+        var ul = document.getElementById('main-list');
+
+        ul.style.listStyle = 'none';
+        ul.classList.add('list-group');
+        var listItem = document.getElementsByClassName('list-item');
+        //create new li element
+        var newLi = document.createElement('li');
+        newLi.innerText = 'list item - 6';
+        newLi.classList.add('list-item');
+        newLi.classList.add('list-group-item');
+        ul.appendChild(newLi);
+
+        for (const listi of listItem) {
+            listi.style.color = 'blue';
+            listi.style.fontSize = '20px';
+            listi.style.fontWeight = 'bold';
+        }
+        var odd = document.querySelectorAll('li:nth-child(odd)');
+        for (let bijor of odd) {
+            bijor.style.backgroundColor = 'yellow';
+        }
+        var even = document.querySelectorAll('li:nth-child(even)');
+        for (let jor of even) {
+            jor.style.backgroundColor = 'LightGreen';
+        }
+        var remove = document.getElementById('main-list');
+        var rehild = document.getElementsByClassName('list-item');
+        var thirdChild = remove.children[2];
+        remove.removeChild(thirdChild);
+        // for (let rc of rehild) {
+        //     remove.removeChild(rc);
+        // }
+
+
+    </script>
+</body>
+
+</html>

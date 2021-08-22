@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Event</title>
+    <link rel="stylesheet" href="style/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <button onclick="document.body.style.backgroundColor='Purple'" class="btn btn-success">Make:Light Green</button>
+        <button onclick="salmon()" class="btn btn-info">Make:Light Salmon</button>
+        <button id="LightSteelBlue" class="btn btn-danger">Make:Light Steel Blue</button>
+        <button id="LimeGreen" class="btn btn-warning">Make:Lime Green</button>
+        <button id="Magenta" class="btn btn-secondary my-3">Make:Magenta</button>
+        <button id="MidnightBlue" class="btn btn-dark my-3">Make:Midnight Blue</button>
+        <button id="Orange" class="btn btn-primary my-3">Make:Orange</button>
+    </div>
+
+    <script>
+        //onclick using simple function
+        function salmon() {
+            document.body.style.backgroundColor = 'LightSalmon';
+        }
+        //using id
+        let light = document.getElementById('LightSteelBlue');
+        light.onclick = lightSteelBlue;
+        function lightSteelBlue() {
+            document.body.style.backgroundColor = 'LightSteelBlue';
+        }
+        //using anunymus function
+        let lime = document.getElementById('LimeGreen');
+        lime.onclick = function () {
+            document.body.style.backgroundColor = 'LimeGreen';
+        }
+
+        //make magenta using action listener
+        let megenta = document.getElementById('Magenta');
+        megenta.addEventListener('click', changeMagenta);
+        function changeMagenta() {
+            document.body.style.backgroundColor = 'Magenta';
+        }
+
+        //acton event using anunymus function
+        let midin = document.getElementById('MidnightBlue');
+        midin.addEventListener('click', function () {
+            document.body.style.backgroundColor = 'MidnightBlue';
+        });
+
+        //using direct sortcut
+        document.getElementById('Orange').addEventListener('click', function () {
+            document.body.style.backgroundColor = 'Orange';
+        });
+    </script>
+</body>
+
+</html>

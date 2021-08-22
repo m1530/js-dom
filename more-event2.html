@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5 p-5">
+        <h1 id="text">Hi confirm your delete</h1>
+        <input id="input-field" type="text" placeholder="Confirm delete"><br><br>
+        <button id='delete-btn' class="btn btn-info" disabled>Click Me</button>
+    </div>
+    <script>
+        //hide
+        let hide = document.getElementById('delete-btn');
+        hide.addEventListener('click', function () {
+            document.getElementById('text').style.display = 'none';
+        });
+        //focus
+        let focus = document.getElementById('input-field');
+        focus.addEventListener('focus', function () {
+            document.body.style.backgroundColor = 'coral';
+        });
+        //blur
+        let blur = document.getElementById('input-field');
+        blur.addEventListener('blur', function () {
+            document.body.style.backgroundColor = 'white';
+        });
+        //keydown
+        /* let keydown = document.getElementById('input-field');
+        keydown.addEventListener('keydown', function () {
+            let val = document.getElementById('input-field');
+            console.log(val.value);
+        }); */
+        //keypress
+        /* let keypress = document.getElementById('input-field');
+        keypress.addEventListener('keypress', function () {
+            let val = document.getElementById('input-field');
+            console.log(val.value);
+        }); */
+        //keyup
+        let keyup = document.getElementById('input-field');
+        keyup.addEventListener('keyup', function () {
+            let disable = document.getElementById('delete-btn');
+            let val = document.getElementById('input-field');
+            if (val.value == 'delete') {
+                disable.removeAttribute('disabled');
+            } else {
+                disable.setAttribute('disabled', true);
+            }
+        });
+
+        //change
+        let onchange = document.getElementById('input-field');
+        onchange.addEventListener('change', function () {
+            let val = document.getElementById('input-field');
+            val.value = '';
+        });
+    </script>
+</body>
+
+</html>

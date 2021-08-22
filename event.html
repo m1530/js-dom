@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Event</title>
+    <link rel="stylesheet" href="style/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <button onclick="document.body.style.backgroundColor='LightGreen'" class="btn btn-success">Make:Light
+            Green</button>
+        <button onclick="LightSalmon()" class="btn btn-info">Make:Light Salmon</button>
+        <button id="LightSteelBlue" class="btn btn-danger">Make:Light Steel Blue</button>
+        <button id="LimeGreen" class="btn btn-warning">Make:Lime Green</button>
+        <button id="Magenta" class="btn btn-secondary my-3">Make:Magenta</button>
+        <button id="MidnightBlue" class="btn btn-dark my-3">Make:Midnight Blue</button>
+        <button id="Orange" class="btn btn-light my-3">Make:Orange</button>
+    </div>
+
+    <script>
+        //using simple function
+        function LightSalmon() {
+            document.body.style.backgroundColor = 'LightSalmon';
+        }
+
+        //select by id
+        let selectId = document.getElementById('LightSteelBlue');
+
+        selectId.onclick = changeColor;
+        function changeColor() {
+            document.body.style.backgroundColor = 'LightSteelBlue';
+        }
+        //use anonomius function
+
+        var LimeGreen = document.getElementById('LimeGreen');
+
+        LimeGreen.onclick = function () {
+            document.body.style.backgroundColor = 'LimeGreen';
+        }
+
+        //addaction listener
+
+        var action = document.getElementById('Magenta');
+        action.addEventListener('click', magenta);
+        function magenta() {
+            document.body.style.backgroundColor = 'magenta';
+        }
+
+        //add event using anunymus function
+
+        var midiun = document.getElementById('MidnightBlue');
+        midiun.addEventListener('click', function () {
+            document.body.style.backgroundColor = 'MidnightBlue';
+        });
+
+        //using direct
+
+        document.getElementById('Orange').addEventListener('click', function () {
+            document.body.style.backgroundColor = 'Orange';
+        })
+
+
+
+
+
+    </script>
+</body>
+
+</html>

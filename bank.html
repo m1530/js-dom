@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-5 gy-4">
+            <div class="col-md-4">
+                <div class="bg-warning rounded-3 p-4 text-white">
+                    <h4>Deposit</h4>
+                    <h1>$ <span id="diposit-val">00</span></h1>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="bg-danger rounded-3 p-4 text-white">
+                    <h4>Withdrow</h4>
+                    <h1>$ <span id="withdrow-balance">00</span></h1>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="bg-info rounded-3 p-4 text-white">
+                    <h4>Balance</h4>
+                    <h1>$ <span id="total-balance">200</span></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row mt-5 mb-2 gy-3">
+            <div class="col-md-6">
+                <div class="shadow-lg rounded-3 p-5 text-white">
+                    <input id="dposit-input" type="text" placeholder="Enter Deposit Amount" class="form-control"><br>
+                    <button id="deposit-button" class="btn btn-success">Deposit</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="shadow-lg rounded-3 p-5 text-white">
+                    <input id="withdrow-input" type="text" placeholder="Enter Withdrow Amount" class="form-control"><br>
+                    <button id="withdrow-button" class="btn btn-success">Withdrow</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // let depositBtn = 
+        document.getElementById('deposit-button').addEventListener('click', function () {
+            let depositAmount = document.getElementById('dposit-input');
+            let depositVal = document.getElementById('diposit-val');
+            if (depositAmount.value != 'string' && depositAmount.value != '') {
+                let totalDeposit = parseFloat(depositAmount.value) + parseFloat(depositVal.innerText);
+                depositVal.innerText = totalDeposit;
+                let total = document.getElementById('total-balance');
+                let totalBalance = parseFloat(depositAmount.value) + parseFloat(total.innerText);
+                total.innerText = totalBalance;
+                depositAmount.value = '';
+            }
+
+        });
+        //let calculate withdrow
+
+        document.getElementById('withdrow-button').addEventListener('click', function () {
+            let withdrowInput = document.getElementById('withdrow-input');
+            let withdrowBalance = document.getElementById('withdrow-balance');
+            if (withdrowInput.value != 'string' && withdrowInput.value != '') {
+                let totalWithdrow = parseFloat(withdrowInput.value) + parseFloat(withdrowBalance.innerText);
+                withdrowBalance.innerText = totalWithdrow;
+                let total = document.getElementById('total-balance');
+                let totalBalance = parseFloat(total.innerText) - parseFloat(withdrowInput.value);
+                total.innerText = totalBalance;
+                withdrowInput.value = '';
+            }
+
+        })
+    </script>
+</body>
+
+</html>

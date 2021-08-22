@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/css/bootstrap.min.css">
+</head>
+
+<body>
+    <section class="container mt-5 p-5">
+        <h1 id="massege">Hello How are you</h1>
+        <input id="inputConfirm" type="text" placeholder="confirm delete">
+        <br> <br>
+        <button id="btnClick" class="btn btn-primary" disabled>Delete</button>
+    </section>
+
+    <script>
+        let btn = document.getElementById('btnClick');
+        btn.addEventListener('click', function () {
+            let msg = document.getElementById('massege');
+            msg.style.display = 'none';
+        });
+        //focus
+        document.getElementById('inputConfirm').addEventListener('focus', function () {
+            document.body.style.backgroundColor = 'LimeGreen';
+        });
+        //blur
+        document.getElementById('inputConfirm').addEventListener('blur', function () {
+            document.body.style.backgroundColor = 'white';
+        });
+        //keydown
+        /*  let down = document.getElementById('inputConfirm');
+         down.addEventListener('keydown', function () {
+             let values = document.getElementById('inputConfirm');
+             console.log(values.value);
+         }); */
+        //keypress
+        /*   let down = document.getElementById('inputConfirm');
+          down.addEventListener('keypress', function () {
+              let values = document.getElementById('inputConfirm');
+              console.log(values.value);
+          }); */
+
+        //keyup
+        let down = document.getElementById('inputConfirm');
+        down.addEventListener('keyup', function (e) {
+            // console.log(e.target.value);
+            let button = document.getElementById('btnClick');
+            if (e.target.value == 'delete') {
+                button.removeAttribute('disabled');
+            } else {
+                button.setAttribute('disabled', true);
+            }
+        });
+
+        //change
+        document.getElementById('inputConfirm').addEventListener('change', function () {
+            const deleteField = document.getElementById('inputConfirm');
+            console.log(deleteField.value);
+            deleteField.value = '';
+        });
+    </script>
+</body>
+
+</html>
